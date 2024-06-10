@@ -1,30 +1,49 @@
-# React + TypeScript + Vite
+# Volga Infotech Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a small assignment project created for Volga Infotech. It's a React application built with TypeScript and Tailwind CSS using Vite.
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project serves as a showcase of my skills in web development. I want to express my gratitude to Volga Infotech for the opportunity to work on this assignment.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A statically typed superset of JavaScript that compiles to plain JavaScript.
+- **Tailwind CSS**: A utility-first CSS framework for quickly building custom designs.
+- **Vite**: A fast, opinionated web dev build tool that serves your code via native ES Module imports.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. **Clone the repository**:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   ```bash
+   git clone https://github.com/your-username/your-project.git
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   cd your-project
+   npm install
+   ```
+
+3. **Start the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+   This will start the development server.
+
+## Deployment
+
+The project is deployed to GitHub Pages for easy access. You can view it [here](https://your-username.github.io/your-project).
+
+## Additional Notes
+
+- I've added personal stylings to enhance the designs and improve the user experience.
+- Data is stored in the browser's localStorage to ensure it's preserved even when the page is refreshed.
+- Reusable components have been created wherever possible to maintain a clean and modular codebase.
+
+Thank you once again for this opportunity!
