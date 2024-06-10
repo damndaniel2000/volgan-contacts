@@ -16,7 +16,7 @@ const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({
   return (
     isOpen && (
       <Modal onClose={onClose}>
-        <h2 className="text-xl mb-8">
+        <h2 className="text-sm sm:text-base mb-8">
           Are you sure you want to delete this contact?
         </h2>
         <div className="flex justify-end space-x-4">

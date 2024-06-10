@@ -14,7 +14,7 @@ const ContactTable: React.FC<ContactTableProps> = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <table className="min-w-full bg-white">
+    <table className="min-w-full bg-white text-[10px] sm:text-base">
       <thead>
         <tr className="text-left">
           <th className="py-2 border-b">Name</th>
@@ -28,7 +28,7 @@ const ContactTable: React.FC<ContactTableProps> = ({
         {contacts.length > 0 ? (
           contacts.map((contact) => (
             <ContactRow
-              key={contact.email}
+              key={contact.id}
               contact={contact}
               onDelete={handleDelete}
               onDetails={(contact) =>

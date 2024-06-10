@@ -14,7 +14,7 @@ const ContactRow: React.FC<ContactRowProps> = ({
   onDetails,
 }) => {
   return (
-    <tr>
+    <tr className="text-[10px] sm:text-base">
       <td className="py-2 border-b">{contact.name}</td>
       <td className="py-2 border-b">{contact.email}</td>
       <td className="py-2 border-b">{contact.phone}</td>

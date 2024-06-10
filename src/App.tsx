@@ -9,7 +9,8 @@ import ContactDetails from "./pages/ContactDetails";
 
 const App = () => {
   return (
-    <Router>
+    // base route set for Github Pages
+    <Router basename="/volgan-contacts">
       <Routes>
         <Route
           path="/contacts"

@@ -33,7 +33,9 @@ const ContactInput: React.FC<ContactInputProps> = ({
   };
 
   const inputClasses = classNames(
-    "border rounded w-full focus:outline-none",
+    "border rounded w-full focus:outline-none transition-all duration-200",
+    "sm:py-2", // Default size for screens >= sm
+    "py-1 text-[10px] sm:text-base", // Smaller size for screens < sm
     {
       "border-blue-500": isFocused,
       "border-gray-300": !isFocused && isValid,
@@ -42,19 +44,19 @@ const ContactInput: React.FC<ContactInputProps> = ({
     className
   );
 
-  const iconPaddingClass = icon ? "pl-9" : "pl-4";
+  const iconPaddingClass = icon ? "sm:pl-9 pl-6" : "sm:pl-4 pl-3";
 
   return (
     <div className="flex flex-col w-full">
       <div className="relative">
         {icon && (
-          <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+          <div className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2">
             {icon}
           </div>
         )}
         <input
           {...props}
-          className={`${inputClasses} ${iconPaddingClass} py-2`}
+          className={`${inputClasses} ${iconPaddingClass}`}
           onFocus={handleFocus}
           onBlur={handleBlur}
         />
@@ -63,7 +65,9 @@ const ContactInput: React.FC<ContactInputProps> = ({
         className="mt-1 ml-1 h-4 transition-opacity duration-300"
         style={{ opacity: !isValid && touched ? 1 : 0 }}
       >
-        <p className="text-red-500 text-[10px]">{validationMessage}</p>
+        <p className="text-red-500 text-[8px] sm:text-[10px]">
+          {validationMessage}
+        </p>
       </div>
     </div>
   );

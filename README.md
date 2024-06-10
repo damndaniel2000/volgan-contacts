@@ -38,7 +38,7 @@ This project serves as a showcase of my skills in web development. I want to exp
 
 ## Deployment
 
-The project is deployed to GitHub Pages for easy access. You can view it [here](https://your-username.github.io/your-project).
+The project is deployed to GitHub Pages for easy access. You can view it [here](https://damndaniel2000.github.io/volgan-contacts).
 
 ## Additional Notes
 

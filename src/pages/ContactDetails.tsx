@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Contact } from "../utils/types";
+import ActionButton from "../components/Button";
 
 const ContactDetails = () => {
   const contacts: Contact[] = useMemo(() => {
@@ -17,17 +18,16 @@ const ContactDetails = () => {
   };
 
   const GoBackButton = (
-    <button
+    <ActionButton
       onClick={handleGoBack}
-      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-    >
-      Go Back
-    </button>
+      text="Go Back"
+      color="blue"
+    />
   );
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-6">
+      <div className="max-w-3xl text-sm sm:text-base w-full bg-white shadow-lg rounded-lg p-6">
         {contact ? (
           <>
             <h2 className="text-2xl mb-4">Contact Details</h2>

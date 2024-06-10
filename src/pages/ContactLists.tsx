@@ -190,23 +190,21 @@ const ContactList: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-6">
-        <div className="mb-4 flex justify-between items-start">
+      <div className="sm:max-w-3xl w-full bg-white shadow-lg rounded-lg p-6">
+        <div className="mb-0 sm:mb-2 space-x-8 flex justify-between items-start">
           <Input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by Email Address"
-            className="max-w-lg"
             icon={
               <svg
-                width="16"
-                height="16"
+                className="w-3 h-3 sm:w-4 sm:h-4"
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -219,6 +217,7 @@ const ContactList: React.FC = () => {
             onClick={() => setIsAddModalOpen(true)}
             text="Create"
             color="blue"
+            className="mt-1 sm:mt-0"
           />
         </div>
         <ContactTable

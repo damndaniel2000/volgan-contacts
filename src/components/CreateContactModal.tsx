@@ -42,7 +42,7 @@ const AddContactModal: React.FC<AddContactModalProps> = ({
     isOpen && (
       <Modal onClose={onClose}>
         <h2 className="text-xl font-bold mb-4">Add New Contact</h2>
-        <div className="space-y-2 w-[500px]">
+        <div className="sm:space-y-2 sm:w-[500px]">
           <div>
             <Input
               type="text"
