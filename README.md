@@ -18,13 +18,13 @@ This project serves as a showcase of my skills in web development. I want to exp
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/your-project.git
+   git clone https://github.com/damndaniel2000/volgan-contacts
    ```
 
 2. **Install dependencies**:
 
    ```bash
-   cd your-project
+   cd volgan-contacts
    npm install
    ```
 
