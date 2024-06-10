@@ -29,9 +29,14 @@ const AddContactModal: React.FC<AddContactModalProps> = ({
     return phoneRegex.test(phone);
   };
 
+  const isNameValid = (name: string) => {
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    return nameRegex.test(name) && name.trim().length >= 3;
+  };
+
   const isFormValid = () => {
     return (
-      newContact.name.trim().length >= 3 &&
+      isNameValid(newContact.name) &&
       isEmailValid(newContact.email) &&
       isPhoneValid(newContact.phone) &&
       newContact.address.trim().length >= 3
@@ -51,8 +56,8 @@ const AddContactModal: React.FC<AddContactModalProps> = ({
                 setNewContact({ ...newContact, name: e.target.value })
               }
               placeholder="Name"
-              isValid={newContact.name.trim().length >= 3}
-              validationMessage="Name must be at least 3 characters"
+              isValid={isNameValid(newContact.name)}
+              validationMessage="Name must be at least 3 characters and contain only alphabets"
             />
           </div>
           <div>
