@@ -36,14 +36,11 @@ This project serves as a showcase of my skills in web development. I want to exp
 
    This will start the development server.
 
-## Deployment
-
-The project is deployed to GitHub Pages for easy access. You can view it [here](https://damndaniel2000.github.io/volgan-contacts).
-
 ## Additional Notes
 
 - I've added personal stylings to enhance the designs and improve the user experience.
 - Data is stored in the browser's localStorage to ensure it's preserved even when the page is refreshed.
 - Reusable components have been created wherever possible to maintain a clean and modular codebase.
+- Mobile screens have been kept in mind too.
 
 Thank you once again for this opportunity!
