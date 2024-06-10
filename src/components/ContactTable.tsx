@@ -1,16 +1,18 @@
 import React from "react";
 import ContactRow from "./ContactRow";
 import { Contact } from "../utils/types";
+import { useNavigate } from "react-router-dom";
 
 interface ContactTableProps {
   contacts: Contact[];
-  handleDelete: (email: string) => void;
+  handleDelete: (id: string) => void;
 }
 
 const ContactTable: React.FC<ContactTableProps> = ({
   contacts,
   handleDelete,
 }) => {
+  const navigate = useNavigate();
   return (
     <table className="min-w-full bg-white">
       <thead>
@@ -29,14 +31,16 @@ const ContactTable: React.FC<ContactTableProps> = ({
               key={contact.email}
               contact={contact}
               onDelete={handleDelete}
-              onDetails={(name) => alert(`Details for ${name}`)}
+              onDetails={(contact) =>
+                navigate("/contact/details/" + contact.id)
+              }
             />
           ))
         ) : (
           <tr>
             <td
               colSpan={5}
-              className="text-center py-2"
+              className="text-center py-8"
             >
               No results found.
             </td>

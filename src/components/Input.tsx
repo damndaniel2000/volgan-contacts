@@ -1,4 +1,5 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes, useState } from "react";
+import classNames from "classnames";
 
 interface ContactInputProps extends InputHTMLAttributes<HTMLInputElement> {
   isValid?: boolean;
@@ -14,9 +15,11 @@ const ContactInput: React.FC<ContactInputProps> = ({
   icon,
   onFocus,
   onBlur,
+  className,
   ...props
 }) => {
-  const [isFocused, setIsFocused] = React.useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [touched, setTouched] = useState(false);
 
   const handleFocus: React.FocusEventHandler<HTMLInputElement> = (event) => {
     setIsFocused(true);
@@ -25,33 +28,43 @@ const ContactInput: React.FC<ContactInputProps> = ({
 
   const handleBlur: React.FocusEventHandler<HTMLInputElement> = (event) => {
     setIsFocused(false);
+    setTouched(true);
     onBlur && onBlur(event);
   };
+
+  const inputClasses = classNames(
+    "border rounded w-full focus:outline-none",
+    {
+      "border-blue-500": isFocused,
+      "border-gray-300": !isFocused && isValid,
+      "border-red-500": !isFocused && !isValid,
+    },
+    className
+  );
+
+  const iconPaddingClass = icon ? "pl-9" : "pl-4"; // Adjust padding based on the presence of the icon
 
   return (
     <div className="flex flex-col w-full">
       <div className="relative">
         {icon && (
-          <div className="absolute left-2 top-1/2 transform -translate-y-1/2">
+          <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
             {icon}
           </div>
         )}
         <input
           {...props}
-          className={`border ${props.className ? props.className : ""} ${
-            isFocused
-              ? "border-blue-500"
-              : isValid
-              ? "border-gray-300"
-              : "border-red-500"
-          } rounded px-${icon ? "10" : "4"} py-2 w-full focus:outline-none`}
+          className={`${inputClasses} ${iconPaddingClass} py-2`}
           onFocus={handleFocus}
           onBlur={handleBlur}
         />
       </div>
-      {!isValid && (
-        <p className="text-red-500 text-xs mt-1">{validationMessage}</p>
-      )}
+      <div
+        className="mt-1 ml-1 h-4 transition-opacity duration-300"
+        style={{ opacity: !isValid && touched ? 1 : 0 }}
+      >
+        <p className="text-red-500 text-[10px]">{validationMessage}</p>
+      </div>
     </div>
   );
 };

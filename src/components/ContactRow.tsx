@@ -4,8 +4,8 @@ import { Contact } from "../utils/types";
 
 interface ContactRowProps {
   contact: Contact;
-  onDelete: (email: string) => void;
-  onDetails: (name: string) => void;
+  onDelete: (id: string) => void;
+  onDetails: (contact: Contact) => void;
 }
 
 const ContactRow: React.FC<ContactRowProps> = ({
@@ -20,15 +20,15 @@ const ContactRow: React.FC<ContactRowProps> = ({
       <td className="py-2 border-b">{contact.phone}</td>
       <td className="py-2 border-b">
         <Button
-          onClick={() => onDelete(contact.email)}
-          text="DELETE"
+          onClick={() => onDelete(contact.id)}
+          text="Delete"
           color="red"
         />
       </td>
       <td className="py-2 border-b">
         <Button
-          onClick={() => onDetails(contact.name)}
-          text="DETAILS"
+          onClick={() => onDetails(contact)}
+          text="Details"
           color="blue"
         />
       </td>
