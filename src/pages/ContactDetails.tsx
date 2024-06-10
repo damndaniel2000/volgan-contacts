@@ -16,6 +16,15 @@ const ContactDetails = () => {
     navigate("/contacts");
   };
 
+  const GoBackButton = (
+    <button
+      onClick={handleGoBack}
+      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+    >
+      Go Back
+    </button>
+  );
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-6">
@@ -36,26 +45,12 @@ const ContactDetails = () => {
                 <strong>Address:</strong> {contact.address}
               </p>
             </div>
-            <div className="flex justify-end mt-4">
-              <button
-                onClick={handleGoBack}
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-              >
-                Go Back
-              </button>
-            </div>
+            <div className="flex justify-end mt-4">{GoBackButton}</div>
           </>
         ) : (
           <div>
             Contact not found
-            <div className="flex justify-end mt-4">
-              <button
-                onClick={handleGoBack}
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-              >
-                Go Back
-              </button>
-            </div>
+            <div className="flex justify-end mt-4">{GoBackButton}</div>
           </div>
         )}
       </div>

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import ContactTable from "../components/ContactTable";
 import { Contact } from "../utils/types";
 import CreateContactModal from "../components/CreateContactModal";
 import DeleteConfirmationModal from "../components/DeleteConfirmationModal";
-import { v4 as uuidv4 } from "uuid"; // Import UUID generator
+import { v4 as uuidv4 } from "uuid";
 
 const initialContacts: Contact[] = [
   {
@@ -74,7 +74,7 @@ const ContactList: React.FC = () => {
   const handleAdd = () => {
     setContacts([newContact, ...contacts]);
     setNewContact({
-      id: uuidv4(), // Generate UUID for new contact
+      id: uuidv4(),
       name: "",
       email: "",
       phone: "",
@@ -85,7 +85,7 @@ const ContactList: React.FC = () => {
 
   const handleCancel = () => {
     setNewContact({
-      id: uuidv4(), // Generate UUID for new contact
+      id: uuidv4(),
       name: "",
       email: "",
       phone: "",
@@ -99,9 +99,10 @@ const ContactList: React.FC = () => {
     setIsDeleteModalOpen(true);
   };
 
-  const filteredContacts = search
-    ? contacts.filter((contact) => contact.email.includes(search))
-    : contacts;
+  const filteredContacts = useMemo(() => {
+    if (!search) return contacts;
+    return contacts.filter((contact) => contact.email.includes(search));
+  }, [contacts, search]);
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

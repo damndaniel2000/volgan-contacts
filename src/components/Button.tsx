@@ -18,7 +18,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
     "px-4 py-2 rounded transition duration-200",
     {
       "!bg-gray-300 !text-gray-500": disabled,
-      "cursor-pointer bg-gray-300 text-white hover:bg-gray-400":
+      "cursor-pointer hover:bg-gray-500 hover:text-white":
         color === "gray" && !disabled,
       "bg-blue-500 text-white hover:bg-blue-600": color === "blue",
       "bg-green-500 text-white hover:bg-green-600": color === "green",

@@ -42,7 +42,7 @@ const ContactInput: React.FC<ContactInputProps> = ({
     className
   );
 
-  const iconPaddingClass = icon ? "pl-9" : "pl-4"; // Adjust padding based on the presence of the icon
+  const iconPaddingClass = icon ? "pl-9" : "pl-4";
 
   return (
     <div className="flex flex-col w-full">
